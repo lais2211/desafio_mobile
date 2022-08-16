@@ -18,4 +18,15 @@ class MovieRepositoryImpl implements MovieRepository {
       return Left(e);
     }
   }
+
+  @override
+  Future<Either<Failure, List<Movie>>> getSimiliarMovies(
+      int id, int page) async {
+    try {
+      final remoteData = await datasource.getSimilarMovies(id, page);
+      return Right(remoteData);
+    } on Failure catch (e) {
+      return Left(e);
+    }
+  }
 }
