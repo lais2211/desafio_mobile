@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
                   child: ListView.builder(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
-                      itemCount: 5,
+                      itemCount: store.similarMovies.length,
                       itemBuilder: (context, index) {
                         var actualSimilarMovie = store.similarMovies[index];
                         return Padding(
